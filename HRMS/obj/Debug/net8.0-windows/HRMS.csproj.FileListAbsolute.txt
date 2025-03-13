@@ -16,3 +16,4 @@ C:\Users\st310-11\Desktop\меньшиков ПР-32\HRMS\obj\Debug\net8.0-windo
 C:\Users\st310-11\Desktop\меньшиков ПР-32\HRMS\obj\Debug\net8.0-windows\ref\HRMS.dll
 C:\Users\st310-11\Desktop\меньшиков ПР-32\HRMS\obj\Debug\net8.0-windows\HRMS.FormMain.resources
 C:\Users\st310-11\Desktop\меньшиков ПР-32\HRMS\obj\Debug\net8.0-windows\HRMS.FormEntrance.resources
+C:\Users\st310-11\Desktop\меньшиков ПР-32\HRMS\obj\Debug\net8.0-windows\HRMS.FormInterface.resources

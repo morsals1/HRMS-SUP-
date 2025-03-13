@@ -90,7 +90,54 @@ namespace HRMS
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panelRender.Controls.Clear();
+
+            // Создаём DataGridView
+            DataGridView dataGridView = new DataGridView
+            {
+                Name = "dataGridViewUsers",
+                Size = new Size(panelRender.Width - 20, panelRender.Height - 60),
+                Location = new Point(10, 10),
+                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+            };
+
+            // Добавляем столбцы
+            dataGridView.Columns.Add("UserID", "ID");
+            dataGridView.Columns.Add("Username", "Логин");
+            dataGridView.Columns.Add("Role", "Роль");
+            dataGridView.Columns.Add("Email", "E-mail");
+            dataGridView.Columns.Add("FirstName", "Имя");
+            dataGridView.Columns.Add("LastName", "Фамилия");
+            dataGridView.Columns.Add("Position", "Должность");
+            dataGridView.Columns.Add("Department", "Отдел");
+            dataGridView.Columns.Add("HireDate", "Дата приёма");
+            dataGridView.Columns.Add("Salary", "Зарплата");
+            dataGridView.Columns.Add("Status", "Статус");
+
+            // Добавляем тестовые данные (можно заменить на загрузку из БД)
+            dataGridView.Rows.Add(1, "ivanov", "Admin", "ivanov@mail.com", "Иван", "Иванов", "HR", "Кадры", "2022-05-10", "50000", "Активен");
+            dataGridView.Rows.Add(2, "petrov", "Employee", "petrov@mail.com", "Пётр", "Петров", "Разработчик", "ИТ", "2023-01-15", "60000", "В отпуске");
+
+            // Создаём кнопку "Добавить сотрудника"
+            Button addButton = new Button
+            {
+                Name = "btnAddEmployee",
+                Text = "Добавить сотрудника",
+                Size = new Size(200, 30),
+                Location = new Point(10, panelRender.Height - 40)
+            };
+
+            addButton.Click += (s, ev) =>
+            {
+                FormInterface formInterface = new FormInterface();
+                formInterface.FormClosed += (s, args) => this.Close();
+                this.Hide();
+                formInterface.Show();
+            };
+
+            panelRender.Controls.Add(dataGridView);
+            panelRender.Controls.Add(addButton);
         }
+
 
         private void projectsToolStripMenuItem_Click(object sender, EventArgs e)
         {
